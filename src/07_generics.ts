@@ -51,3 +51,35 @@ console.log(isTrue({1:123}));
 console.log(isTrue({0:false}));
 console.log(isTrue(""));
 console.log(isTrue("ank"));
+
+interface HasID{
+    id:number
+}
+const pu=<T extends HasID>(user:T):T=>{
+    return user
+}
+console.log(pu({id:1,name:"Ar"}));
+//console.log(pu({name:"Ar"}));
+
+//generics in class
+class StateObject <T> {
+
+    private data:T;
+    constructor(value:T){
+        this.data=value;
+    }
+    get state():T{
+        return this.data;
+    }
+    set state(value:T){
+        this.data=value
+    }
+
+}
+const store=new StateObject("pogo")
+console.log(store.state);
+store.state="abc"
+//store.state=134;
+const myState=new StateObject<(string|number|boolean)[]>([12])
+myState.state=[true,false,52,"ank"];
+console.log(myState.state);

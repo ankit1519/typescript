@@ -46,3 +46,27 @@ console.log(isTrue({ 1: 123 }));
 console.log(isTrue({ 0: false }));
 console.log(isTrue(""));
 console.log(isTrue("ank"));
+const pu = (user) => {
+    return user;
+};
+console.log(pu({ id: 1, name: "Ar" }));
+//console.log(pu({name:"Ar"}));
+//generics in class
+class StateObject {
+    constructor(value) {
+        this.data = value;
+    }
+    get state() {
+        return this.data;
+    }
+    set state(value) {
+        this.data = value;
+    }
+}
+const store = new StateObject("pogo");
+console.log(store.state);
+store.state = "abc";
+//store.state=134;
+const myState = new StateObject([12]);
+myState.state = [true, false, 52, "ank"];
+console.log(myState.state);
