@@ -15,8 +15,16 @@ const student = {
     GPA: 8.95,
     classes: [1, 2, 3]
 };
-console.log(`hi`, student.test);
+//console.log(`hi`,student.test);
 for (const key in student) {
     console.log(`${key}: ${student[key]}`);
-    //cant iterate if no index signature
+    //cant iterate if no index signature---> have to use keyof
 }
+console.log("Map");
+Object.keys(student).map((key) => {
+    console.log(key);
+});
+const mi = {
+    'salary': 100,
+    'bonus': 898,
+};
