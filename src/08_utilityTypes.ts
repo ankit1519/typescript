@@ -95,8 +95,18 @@ console.log(x,y);
 type AllPossibleGrades="Ankit" | "Raj" |" AJ " |null|undefined
 type nameOnly=NonNullable<AllPossibleGrades>
 
+
 //7.Return type
 type newAssign={title:string,points:number}
 const createNA=(title:string,points:number):newAssign=>{
     return {title,points}
 }
+
+//8. parameters
+type AssignParams=Parameters<typeof createNA>
+const assignArgs:AssignParams=["generic",100]
+console.log(assignArgs);
+
+
+//9. Awaited -- help with return type of promise
+

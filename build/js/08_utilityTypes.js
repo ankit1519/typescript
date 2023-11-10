@@ -52,3 +52,6 @@ console.log(x, y);
 const createNA = (title, points) => {
     return { title, points };
 };
+const assignArgs = ["generic", 100];
+console.log(assignArgs);
+//9. Awaited -- help with return type of promise
